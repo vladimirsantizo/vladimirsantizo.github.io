@@ -72,10 +72,10 @@
                 </div>
                 <div class="card mb-4 shadow-sm">
                     <div class="card-header" style="background-color:#36383F; border-bottom:1px solid #ffffff !important;">
-                        <h4 class="my-0 font-weight-normal" style="color:#ffffff;">Juegos</h4>
+                        <h4 class="my-0 font-weight-normal" style="color:#ffffff;">Junior</h4>
                     </div>
                     <div class="card-body" style="background-color:#36383F;">
-                        <canvas class="my-4 w-100" id="myChart2" width="900" height="380"></canvas>
+                        <canvas id="prodjr" width="900" height="380"></canvas>
                     </div>
                 </div>
                 <div class="card mb-4 shadow-sm">
@@ -341,6 +341,43 @@
     var myDoughnutChart = new Chart(ctx, {
         type: 'doughnut',
         data: data,
+        options: {
+            rotation: 1 * Math.PI,
+            circumference: 1 * Math.PI,
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: 'white'
+                },
+            }
+        }
+    });
+    
+    
+    var data02 = {
+    labels: [
+        "Productividad"
+    ],
+    datasets: [
+        {
+            data: [40.55,59.45],
+            backgroundColor: [
+                "#FF6384",
+                "lightgrey"
+            ],
+            hoverBackgroundColor: [
+                "#FF6384",
+                "lightgrey"
+            ]
+        }]
+    };
+
+    var ctx = document.getElementById("prodjr");
+
+    // And for a doughnut chart
+    var myDoughnutChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: data02,
         options: {
             rotation: 1 * Math.PI,
             circumference: 1 * Math.PI,
