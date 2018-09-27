@@ -79,8 +79,8 @@
                     </div>
                 </div>
                 <div class="card mb-4 shadow-sm">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">CD Choloma</h4>
+                    <div class="card-header" style="background-color:#36383F; border-bottom:1px solid #ffffff !important;">
+                        <h4 class="my-0 font-weight-normal" style="color:#ffffff;">CD Choloma</h4>
                     </div>
                     <div class="card-body" style="background-color:#36383F;">
                         <canvas id="productividad" width="900" height="380"></canvas>
@@ -333,19 +333,25 @@
                 "lightgrey"
             ]
         }]
-};
+    };
 
-var ctx = document.getElementById("productividad");
+    var ctx = document.getElementById("productividad");
 
-// And for a doughnut chart
-var myDoughnutChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: data,
-    options: {
-    	rotation: 1 * Math.PI,
-      circumference: 1 * Math.PI
-    }
-});
+    // And for a doughnut chart
+    var myDoughnutChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: data,
+        options: {
+            rotation: 1 * Math.PI,
+            circumference: 1 * Math.PI,
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: 'white'
+                },
+            }
+        }
+    });
 </script>
 </body>
 </html>
