@@ -283,7 +283,7 @@
 
     window.myRadar = new Chart(document.getElementById("myChart"), config)
 
-    var dona = {
+    /*var dona = {
         type: 'doughnut',
         data: {
             labels: ["Junior", "Choloma"],
@@ -315,7 +315,7 @@
         }
     });
 
-    window.myRadar = new Chart(document.getElementById("myChart2"), dona)
+    window.myRadar = new Chart(document.getElementById("myChart2"), dona)*/
     
     var data = {
     labels: [
@@ -372,10 +372,10 @@
         }]
     };
 
-    var ctx = document.getElementById("prodjr");
+    var ctx02 = document.getElementById("prodjr");
 
     // And for a doughnut chart
-    var myDoughnutChart = new Chart(ctx, {
+    var myDoughnutChart = new Chart(ctx02, {
         type: 'doughnut',
         data: data02,
         options: {
