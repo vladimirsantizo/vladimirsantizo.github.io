@@ -395,28 +395,24 @@
         }
     });
     
-    var timeFormat = 'MM/DD/YYYY HH:mm';
-    var color = Chart.helpers.color;
     var data06: {
 	labels: ["Sep 10","Sep 11","Sep 12","Sep 13","Sep 14","Sep 15","Sep 16","Sep 17","Sep 18","Sep 19","Sep 20","Sep 21","Sep 22","Sep 23","Sep 24","Sep 25","Sep 26"],
 	datasets: [{
 		label: 'Junior',
-		backgroundColor: "rgb(54, 162, 235, 0.2)",
-		borderColor: "rgb(54, 162, 235)",
+		backgroundColor: "rgba(54, 162, 235, 0.2)",
+		borderColor: "rgba(54, 162, 235)",
 		fill: false,
 		data: [16.38,3.09,8.19,4.02,2.53,18.32,4.59,7.43,19.02,17.40,3.41,19.17,6.16,4.04]
 		}, {
 		label: 'CD Choloma',
-		backgroundColor: "rgb(0, 0, 255, 0.5)",
-		borderColor: "rgb(0, 0, 255)",
+		backgroundColor: "rgba(255, 99, 132, 0.5)",
+		borderColor: "rgba(255, 99, 132)",
 		fill: false,
 		data: [3.54,4.35,3.53,6.10,4.01,0.56,2.27,22.26,4.56,7.15,1.50,4.53,11.07,11.55]
 		}]
 	};
 	
     var config06 = {
-	type: 'line',
-	options: {
 		title: {
 			text: 'Chart.js Time Scale'
 		},
@@ -424,7 +420,6 @@
 		//Number - The value jump in the hard coded scale
 		scaleStepWidth: 2,
 		scaleStartValue: 0
-	}
     };
 
 	window.onload = function() {
