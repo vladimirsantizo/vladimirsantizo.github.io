@@ -391,28 +391,32 @@
         }
     });
     
+    function newDate(days) {
+        var d = new Date(days);
+        return d;
+    }
     var color = Chart.helpers.color;
     var prodTime = {
         type: 'line',
         data: {
             labels: [ // Date Objects
-                "Sep 10",
-                "Sep 11",
-                "Sep 12",
-                "Sep 13",
-                "Sep 14",
-                "Sep 15",
-                "Sep 16",
-                "Sep 17",
-                "Sep 18",
-                "Sep 19",
-                "Sep 20",
-                "Sep 21",
-                "Sep 22",
-                "Sep 23",
-                "Sep 24",
-                "Sep 25",
-                "Sep 26"
+                newDate("Sep 10 2018"),
+                newDate("Sep 11 2018"),
+                newDate("Sep 12 2018"),
+                newDate("Sep 13 2018"),
+                newDate("Sep 14 2018"),
+                newDate("Sep 15 2018"),
+                newDate("Sep 16 2018"),
+                newDate("Sep 17 2018"),
+                newDate("Sep 18 2018"),
+                newDate("Sep 19 2018"),
+                newDate("Sep 20 2018"),
+                newDate("Sep 21 2018"),
+                newDate("Sep 22 2018"),
+                newDate("Sep 23 2018"),
+                newDate("Sep 24 2018"),
+                newDate("Sep 25 2018"),
+                newDate("Sep 26 2018")
             ],
             datasets: [{
                 label: 'Junior',
