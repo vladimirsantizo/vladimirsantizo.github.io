@@ -89,7 +89,7 @@
                     </div>
                 </div>
             </div>
-            <canvas id="prodHist" width="100%" height="600px"></canvas>
+            <canvas id="prodHist" width="100%" height="300px"></canvas>
             <h2>Section title</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
@@ -496,28 +496,21 @@
 	var d = new Date(days);
 	return d;
     }
+    function newDate(days) {
+	return moment().add(days, 'd').toDate();
+    }
 	var color = Chart.helpers.color;
 	var config06 = {
 		type: 'line',
 		data: {
 			labels: [ // Date Objects
-				newDate("Sep 10 2018"),
-				newDate("Sep 11 2018"),
-				newDate("Sep 12 2018"),
-				newDate("Sep 13 2018"),
-				newDate("Sep 14 2018"),
-				newDate("Sep 15 2018"),
-				newDate("Sep 16 2018"),
-				newDate("Sep 17 2018"),
-				newDate("Sep 18 2018"),
-				newDate("Sep 19 2018"),
-				newDate("Sep 20 2018"),
-				newDate("Sep 21 2018"),
-				newDate("Sep 22 2018"),
-				newDate("Sep 23 2018"),
-				newDate("Sep 24 2018"),
-				newDate("Sep 25 2018"),
-				newDate("Sep 26 2018")
+				newDate(0),
+				newDate(1),
+				newDate(2),
+				newDate(3),
+				newDate(4),
+				newDate(5),
+				newDate(6)
 			],
 			datasets: [{
 				label: 'Junior',
