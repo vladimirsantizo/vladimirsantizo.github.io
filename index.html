@@ -491,116 +491,110 @@
     };
     var ctxhist = document.getElementById('prodHist'); //getContext('2d')
     window.myLine = new Chart(ctxhist, prodTime);*/
-    
     var timeFormat = 'MM/DD/YYYY HH:mm';
-	function newDate(days) {
-		var d = new Date(days);
-		return d;
-	    }
-		/*function newDate(days) {
-			return moment().add(days, 'd').toDate();
-		}*/
-
-
-		var color = Chart.helpers.color;
-		var config06 = {
-			type: 'line',
-			data: {
-				labels: [ // Date Objects
-					"Sep 10",
-					"Sep 11",
-					"Sep 12",
-					"Sep 13",
-					"Sep 14",
-					"Sep 15",
-					"Sep 16",
-					"Sep 17",
-					"Sep 18",
-					"Sep 19",
-					"Sep 20",
-					"Sep 21",
-					"Sep 22",
-					"Sep 23",
-					"Sep 24",
-					"Sep 25",
-					"Sep 26"
+    function newDate(days) {
+	var d = new Date(days);
+	return d.toDate();
+    }
+	var color = Chart.helpers.color;
+	var config06 = {
+		type: 'line',
+		data: {
+			labels: [ // Date Objects
+				newDate("Sep 10 2018"),
+				newDate("Sep 11 2018"),
+				newDate("Sep 12 2018"),
+				newDate("Sep 13 2018"),
+				newDate("Sep 14 2018"),
+				newDate("Sep 15 2018"),
+				newDate("Sep 16 2018"),
+				newDate("Sep 17 2018"),
+				newDate("Sep 18 2018"),
+				newDate("Sep 19 2018"),
+				newDate("Sep 20 2018"),
+				newDate("Sep 21 2018"),
+				newDate("Sep 22 2018"),
+				newDate("Sep 23 2018"),
+				newDate("Sep 24 2018"),
+				newDate("Sep 25 2018"),
+				newDate("Sep 26 2018")
+			],
+			datasets: [{
+				label: 'Junior',
+				backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+				borderColor: window.chartColors.red,
+				fill: false,
+				data: [
+					16.38,
+					3.09,
+					8.19,
+					4.02,
+					2.53,
+					18.32,
+					4.59,
+					7.43,
+					19.02,
+					17.40,
+					3.41,
+					19.17,
+					6.16,
+					4.04
 				],
-				datasets: [{
-					label: 'Junior',
-					backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-					borderColor: window.chartColors.red,
-					fill: false,
-					data: [
-						16.38,
-					    	3.09,
-					    	8.19,
-					    	4.02,
-					    	2.53,
-					    	18.32,
-					    	4.59,
-					    	7.43,
-					    	19.02,
-					    	17.40,
-					    	3.41,
-					    	19.17,
-					    	6.16,
-					    	4.04
-					],
-				}, {
-					label: 'CD Choloma',
-					backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
-					borderColor: window.chartColors.blue,
-					fill: false,
-					data: [
-						3.54,
-					    	4.35,
-					    	3.53,
-					    	6.10,
-					    	4.01,
-					    	0.56,
-					    	2.27,
-					    	22.26,
-					    	4.56,
-					    	7.15,
-					    	1.50,
-					    	4.53,
-					    	11.07,
-					    	11.55
-					],
+			}, {
+				label: 'CD Choloma',
+				backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
+				borderColor: window.chartColors.blue,
+				fill: false,
+				data: [
+					3.54,
+					4.35,
+					3.53,
+					6.10,
+					4.01,
+					0.56,
+					2.27,
+					22.26,
+					4.56,
+					7.15,
+					1.50,
+					4.53,
+					11.07,
+					11.55
+				],
+			}]
+		},
+		options: {
+			title: {
+				text: 'Chart.js Time Scale'
+			},
+			scales: {
+				xAxes: [{
+					type: 'time',
+					time: {
+						format: timeFormat,
+						// round: 'day'
+						tooltipFormat: 'll HH:mm'
+					},
+					scaleLabel: {
+						display: true,
+						labelString: 'Date'
+					}
+				}],
+				yAxes: [{
+					scaleLabel: {
+						display: true,
+						labelString: 'value'
+					}
 				}]
 			},
-			options: {
-				title: {
-					text: 'Chart.js Time Scale'
-				},
-				scales: {
-					xAxes: [{
-						type: 'time',
-						time: {
-							format: timeFormat,
-							// round: 'day'
-							tooltipFormat: 'll HH:mm'
-						},
-						scaleLabel: {
-							display: true,
-							labelString: 'Date'
-						}
-					}],
-					yAxes: [{
-						scaleLabel: {
-							display: true,
-							labelString: 'value'
-						}
-					}]
-				},
-			}
-		};
+		}
+	};
 
-		window.onload = function() {
-			var ctx04 = document.getElementById('prodHist').getContext('2d');
-			window.myLine = new Chart(ctx04, config06);
+	window.onload = function() {
+		var ctx04 = document.getElementById('prodHist').getContext('2d');
+		window.myLine = new Chart(ctx04, config06);
 
-		};
+	};
 </script>
 </body>
 </html>
