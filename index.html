@@ -89,7 +89,9 @@
                     </div>
                 </div>
             </div>
-            <canvas id="prodHist" width="100%" height="300px"></canvas>
+	    <div class="card-deck mb-3 text-center" height="300px">
+               <canvas id="prodHist" width="100%" height="300px"></canvas>
+	    </div>
             <h2>Section title</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
@@ -492,10 +494,10 @@
     var ctxhist = document.getElementById('prodHist'); //getContext('2d')
     window.myLine = new Chart(ctxhist, prodTime);*/
     var timeFormat = 'MM/DD/YYYY HH:mm';
-    function newDate(days) {
+    /*function newDate(days) {
 	var d = new Date(days);
 	return d;
-    }
+    }*/
     function newDate(days) {
 	return moment().add(days, 'd').toDate();
     }
