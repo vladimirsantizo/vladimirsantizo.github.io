@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Dashboard Alutech</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.1/examples/dashboard/dashboard.css">
+    <link rel="stylesheet" href="dashboard.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
@@ -15,6 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow" style="background-color: black !important;">
@@ -22,7 +23,7 @@
         <img src="LOGO.png" alt="hi" class="inline" width="41px" height="36px"/>  <img src="LOGO04.png" alt="hi" class="inline" width="126px" height="35px"/>
     </a>
     <a class="navbar-brand col-xs-6" href="#">
-    	<img src="LOGO05.png" alt="hi" class="inline" height="36px"/>
+        <img src="LOGO05.png" alt="hi" class="inline" height="36px"/>
     </a>
 </nav>
 
@@ -66,7 +67,7 @@
             <div class="card-deck mb-3 text-center">
                 <div class="card mb-4 shadow-sm" style="border:transparent;">
                     <div class="card-header" style="background-color:#27293d; border-bottom:1px solid #2b3553 !important;">
-                        <h4 class="my-0 font-weight-normal" style="color:#ffffff;">Horas Productivas Totales</h4>
+                        <h4 class="my-0" style="color:#ffffff; font-size:1.25rem;">Horas Productivas Totales</h4>
                     </div>
                     <div class="card-body" style="background-color:#27293d;">
                         <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
@@ -74,7 +75,7 @@
                 </div>
                 <div class="card mb-4 shadow-sm" style="border:transparent;">
                     <div class="card-header" style="background-color:#27293d; border-bottom:1px solid #2b3553 !important;">
-                        <h4 class="my-0 font-weight-normal" style="color:#ffffff;">Junior</h4>
+                        <h4 class="my-0 " style="color:#ffffff; font-size:1.25rem;">Junior</h4>
                     </div>
                     <div class="card-body" style="background-color:#27293d;">
                         <canvas id="prodjr" width="900" height="380"></canvas>
@@ -82,22 +83,22 @@
                 </div>
                 <div class="card mb-4 shadow-sm" style="border:transparent;">
                     <div class="card-header" style="background-color:#27293d; border-bottom:1px solid #2b3553 !important;">
-                        <h4 class="my-0 font-weight-normal" style="color:#ffffff;">CD Choloma</h4>
+                        <h4 class="my-0" style="color:#ffffff; font-size:1.25rem;">CD Choloma</h4>
                     </div>
                     <div class="card-body" style="background-color:#27293d;">
                         <canvas id="productividad" width="900" height="380"></canvas>
                     </div>
                 </div>
             </div>
-	    <div class="card mb-1 shadow-sm" style="border:transparent;">
-	       <div class="card-header" style="background-color:#27293d; border-bottom:1px solid #2b3553 !important;">
-	          <h4 class="my-0 font-weight-normal" style="color:#ffffff;">Tiempo Productivo x Día</h4>
-	       </div>
-	       <div class="card-body" style="background-color:#27293d;">
-	          <div class="card-deck mb-3 text-center" height="300" style="margin-left:0px !important; margin-right:0px !important;">
-		     <canvas class="Historia" id="prodHist" width="600" height="300" style="height: 300px;"></canvas>
-		  </div>
-	       </div>
+            <div class="card mb-1 shadow-sm" style="border:transparent;">
+                <div class="card-header" style="background-color:#27293d; border-bottom:1px solid #2b3553 !important;">
+                    <h4 class="my-0 " style="color:#ffffff; font-size:1.25rem;">Tiempo Productivo x Día</h4>
+                </div>
+                <div class="card-body" style="background-color:#27293d;">
+                    <div class="card-deck mb-3 text-center" height="300" style="margin-left:0px !important; margin-right:0px !important;">
+                        <canvas class="Historia" id="prodHist" width="600" height="300" style="height: 300px;"></canvas>
+                    </div>
+                </div>
             </div>
             <h2>Section title</h2>
             <div class="table-responsive">
@@ -271,12 +272,15 @@
                     ticks: {
                         fontColor: 'white'
                     },
+                    gridLines: {
+                        color: 'rgba(255,255,255,0.2)'
+                    }
                 }]
             },
             legend: {
                 display: false,
                 labels: {
-                  fontColor: 'white'
+                    fontColor: 'white'
                 },
             },
             title: {
@@ -284,7 +288,6 @@
             }
         }
     };
-
     Chart.plugins.register({
         beforeDraw: function(chartInstance){
             var ctx = chartInstance.chart.ctx;
@@ -292,9 +295,7 @@
             ctx.fillRect(0,0, chartInstance.chart.width, chartInstance.chart.height);
         }
     });
-
     window.myRadar = new Chart(document.getElementById("myChart"), config)
-
     /*var dona = {
         type: 'doughnut',
         data: {
@@ -318,7 +319,6 @@
             }
         }
     };
-
     Chart.plugins.register({
         beforeDraw: function(chartInstance){
             var ctx = chartInstance.chart.ctx;
@@ -326,29 +326,26 @@
             ctx.fillRect(0,0, chartInstance.chart.width, chartInstance.chart.height);
         }
     });
-
     window.myRadar = new Chart(document.getElementById("myChart2"), dona)*/
-    
+
     var data = {
-    labels: [
-        "Productividad"
-    ],
-    datasets: [
-        {
-            data: [26.87,73.13],
-            backgroundColor: [
-                "#FF6384",
-                "lightgrey"
-            ],
-            hoverBackgroundColor: [
-                "#FF6384",
-                "lightgrey"
-            ]
-        }]
+        labels: [
+            "Productividad"
+        ],
+        datasets: [
+            {
+                data: [26.87,73.13],
+                backgroundColor: [
+                    "#FF6384",
+                    "lightgrey"
+                ],
+                hoverBackgroundColor: [
+                    "#FF6384",
+                    "lightgrey"
+                ]
+            }]
     };
-
     var ctx = document.getElementById("productividad");
-
     // And for a doughnut chart
     var myDoughnutChart = new Chart(ctx, {
         type: 'doughnut',
@@ -364,28 +361,26 @@
             }
         }
     });
-    
-    
+
+
     var data02 = {
-    labels: [
-        "Productividad"
-    ],
-    datasets: [
-        {
-            data: [40.55,59.45],
-            backgroundColor: [
-                "#FF6384",
-                "lightgrey"
-            ],
-            hoverBackgroundColor: [
-                "#FF6384",
-                "lightgrey"
-            ]
-        }]
+        labels: [
+            "Productividad"
+        ],
+        datasets: [
+            {
+                data: [40.55,59.45],
+                backgroundColor: [
+                    "#FF6384",
+                    "lightgrey"
+                ],
+                hoverBackgroundColor: [
+                    "#FF6384",
+                    "lightgrey"
+                ]
+            }]
     };
-
     var ctx02 = document.getElementById("prodjr");
-
     // And for a doughnut chart
     var myDoughnutChart = new Chart(ctx02, {
         type: 'doughnut',
@@ -401,68 +396,70 @@
             }
         }
     });
-    
+
     var data06 = {
-	labels: ["Sep 10","Sep 11","Sep 12","Sep 13","Sep 14","Sep 17","Sep 18","Sep 19","Sep 20","Sep 21","Sep 22","Sep 24","Sep 25","Sep 26"],
-	datasets: [{
-		label: 'Junior',
-		backgroundColor: "rgba(54, 162, 235, 0.2)",
-		borderColor: "rgba(54, 162, 235)",
-		fill: false,
-		data: [16.38,3.09,8.19,4.02,2.53,18.32,4.59,7.43,19.02,17.40,3.41,19.17,6.16,4.04]
-		}, {
-		label: 'CD Choloma',
-		backgroundColor: "rgba(255, 99, 132, 0.5)",
-		borderColor: "rgba(255, 99, 132)",
-		fill: false,
-		data: [3.54,4.35,3.53,6.10,4.01,0.56,2.27,22.26,4.56,7.15,1.50,4.53,11.07,11.55]
-		}]
-	};
-	
-    var config06 = {
-	    type: 'line',
-	    data: data06,
-	    options: {
-		animation: false,
-		scaleOverride: true,
-		scaleSteps: 10,
-		//Number - The value jump in the hard coded scale
-		scaleStepWidth: 2,
-		scaleStartValue: 0,
-		scales: {
-			yAxes: [{
-			    ticks: {
-				beginAtZero: true,
-				fontColor: 'white'
-			    },
-			    pointLabels: {
-				fontColor: 'white'
-			    },
-			    gridLines: {
-				color: 'rgba(255,255,255,0.2)'
-			    },
-			    angleLines:{
-				color: 'white'
-			    }
-			}],
-			xAxes: [{
-			    ticks: {
-				fontColor: 'white'
-			    },
-			}]
-		    },
-		    legend: {
-			display: false,
-			labels: {
-			  fontColor: 'white'
-			},
-		    }
-	    }
+        labels: ["Sep 10","Sep 11","Sep 12","Sep 13","Sep 14","Sep 17","Sep 18","Sep 19","Sep 20","Sep 21","Sep 22","Sep 24","Sep 25","Sep 26"],
+        datasets: [{
+            label: 'Junior',
+            backgroundColor: "rgba(54, 162, 235, 0.2)",
+            borderColor: "rgba(54, 162, 235)",
+            fill: false,
+            data: [16.38,3.09,8.19,4.02,2.53,18.32,4.59,7.43,19.02,17.40,3.41,19.17,6.16,4.04]
+        }, {
+            label: 'CD Choloma',
+            backgroundColor: "rgba(255, 99, 132, 0.5)",
+            borderColor: "rgba(255, 99, 132)",
+            fill: false,
+            data: [3.54,4.35,3.53,6.10,4.01,0.56,2.27,22.26,4.56,7.15,1.50,4.53,11.07,11.55]
+        }]
     };
 
+    var config06 = {
+        type: 'line',
+        data: data06,
+        options: {
+            animation: false,
+            scaleOverride: true,
+            scaleSteps: 10,
+            //Number - The value jump in the hard coded scale
+            scaleStepWidth: 2,
+            scaleStartValue: 0,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: 'white'
+                    },
+                    pointLabels: {
+                        fontColor: 'white'
+                    },
+                    gridLines: {
+                        color: 'rgba(255,255,255,0.2)'
+                    },
+                    angleLines:{
+                        color: 'white'
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        fontColor: 'white'
+                    },
+                    gridLines: {
+                        color: 'rgba(255,255,255,0.2)'
+                    }
+                }]
+            },
+            legend: {
+                display: false,
+                labels: {
+                    fontColor: 'white'
+                },
+            }
+        }
+    };
     window.onload = function() {
-       var ctx04 = document.getElementById('prodHist').getContext('2d');
-       window.myLine = new Chart(ctx04, config06);
+        var ctx04 = document.getElementById('prodHist').getContext('2d');
+        window.myLine = new Chart(ctx04, config06);
     };
 </script>
 </body>
