@@ -395,7 +395,7 @@
         }
     });
     
-    var data06: {
+    var data06 = {
 	labels: ["Sep 10","Sep 11","Sep 12","Sep 13","Sep 14","Sep 15","Sep 16","Sep 17","Sep 18","Sep 19","Sep 20","Sep 21","Sep 22","Sep 23","Sep 24","Sep 25","Sep 26"],
 	datasets: [{
 		label: 'Junior',
@@ -422,11 +422,10 @@
 		scaleStartValue: 0
     };
 
-	window.onload = function() {
-		var ctx04 = document.getElementById('prodHist').getContext('2d');
-		window.myLine = new Chart(ctx04).Line(data06, config06);
-
-	};
+    window.onload = function() {
+       var ctx04 = document.getElementById('prodHist').getContext('2d');
+       window.myLine = new Chart(ctx04).Line(data06, config06);
+    };
 </script>
 </body>
 </html>
