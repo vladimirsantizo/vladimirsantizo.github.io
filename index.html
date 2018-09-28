@@ -494,7 +494,7 @@
     var timeFormat = 'MM/DD/YYYY HH:mm';
     function newDate(days) {
 	var d = new Date(days);
-	return d.toDate();
+	return d;
     }
 	var color = Chart.helpers.color;
 	var config06 = {
@@ -577,7 +577,7 @@
 					},
 					scaleLabel: {
 						display: true,
-						labelString: 'Date'
+						labelString: 'Fecha'
 					}
 				}],
 				yAxes: [{
