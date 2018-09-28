@@ -355,7 +355,7 @@
     });
     
     
-    /*var data02 = {
+    var data02 = {
     labels: [
         "Productividad"
     ],
@@ -389,7 +389,7 @@
                 },
             }
         }
-    });*/
+    });
     
     function newDate(days) {
         var d = new Date(days);
@@ -487,7 +487,7 @@
             },
         }
     };
-    var ctxhist = document.getElementById('prodjr').getContext('2d');
+    var ctxhist = document.getElementById('prodHist'); //getContext('2d')
     window.myLine = new Chart(ctxhist, prodTime);
 </script>
 </body>
