@@ -87,6 +87,7 @@
                     </div>
                 </div>
             </div>
+            <canvas id="prodHist" width="100%" height="100%"></canvas>
             <h2>Section title</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
@@ -389,6 +390,99 @@
             }
         }
     });
+    
+    var prodTime = {
+        type: 'line',
+        data: {
+            labels: [ // Date Objects
+                "Sep 10",
+                "Sep 11",
+                "Sep 12",
+                "Sep 13",
+                "Sep 14",
+                "Sep 15",
+                "Sep 16",
+                "Sep 17",
+                "Sep 18",
+                "Sep 19",
+                "Sep 20",
+                "Sep 21",
+                "Sep 22",
+                "Sep 23",
+                "Sep 24",
+                "Sep 25",
+                "Sep 26"
+            ],
+            datasets: [{
+                label: 'Junior',
+                backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+                borderColor: window.chartColors.red,
+                fill: false,
+                data: [
+                    "16:38:00",
+                    "03:09:00",
+                    "08:19:00",
+                    "04:02:00",
+                    "02:53:00",
+                    "18:32:00",
+                    "04:59:00",
+                    "07:43:00",
+                    "19:02:00",
+                    "17:40:00",
+                    "03:41:00",
+                    "19:17:00",
+                    "06:16:00",
+                    "04:04:00"
+                ],
+            }, {
+                label: 'CD Choloma',
+                backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
+                borderColor: window.chartColors.blue,
+                fill: false,
+                data: [
+                    "03:54:00",
+                    "04:35:00",
+                    "03:53:00",
+                    "06:10:00",
+                    "04:01:00",
+                    "00:56:00",
+                    "02:27:00",
+                    "22:26:00",
+                    "04:56:00",
+                    "07:15:00",
+                    "01:50:00",
+                    "04:53:00",
+                    "11:07:00",
+                    "11:55:00"
+                ],
+            }]
+        },
+        options: {
+            title: {
+                text: 'Chart.js Time Scale'
+            },
+            scales: {
+                xAxes: [{
+                    type: 'time',
+                    time: {
+                        format: "HH:mm",
+                        tooltipFormat: 'll HH:mm'
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Date'
+                    }
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'value'
+                    }
+                }]
+            },
+        }
+    };
+    window.myLine = new Chart(document.getElementById("prodHist"), prodTime)
 </script>
 </body>
 </html>
