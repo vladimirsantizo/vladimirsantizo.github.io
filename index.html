@@ -65,26 +65,26 @@
             </div>
             <div class="card-deck mb-3 text-center">
                 <div class="card mb-4 shadow-sm">
-                    <div class="card-header" style="background-color:#36383F; border-bottom:1px solid #ffffff !important;">
+                    <div class="card-header" style="background-color:#27293d; border-bottom:1px solid #ffffff !important;">
                         <h4 class="my-0 font-weight-normal" style="color:#ffffff;">Horas Productivas Totales</h4>
                     </div>
-                    <div class="card-body" style="background-color:#36383F;">
+                    <div class="card-body" style="background-color:#27293d;">
                         <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
                     </div>
                 </div>
                 <div class="card mb-4 shadow-sm">
-                    <div class="card-header" style="background-color:#36383F; border-bottom:1px solid #ffffff !important;">
+                    <div class="card-header" style="background-color:#27293d; border-bottom:1px solid #ffffff !important;">
                         <h4 class="my-0 font-weight-normal" style="color:#ffffff;">Junior</h4>
                     </div>
-                    <div class="card-body" style="background-color:#36383F;">
+                    <div class="card-body" style="background-color:#27293d;">
                         <canvas id="prodjr" width="900" height="380"></canvas>
                     </div>
                 </div>
                 <div class="card mb-4 shadow-sm">
-                    <div class="card-header" style="background-color:#36383F; border-bottom:1px solid #ffffff !important;">
+                    <div class="card-header" style="background-color:#27293d; border-bottom:1px solid #ffffff !important;">
                         <h4 class="my-0 font-weight-normal" style="color:#ffffff;">CD Choloma</h4>
                     </div>
-                    <div class="card-body" style="background-color:#36383F;">
+                    <div class="card-body" style="background-color:#27293d;">
                         <canvas id="productividad" width="900" height="380"></canvas>
                     </div>
                 </div>
@@ -281,7 +281,7 @@
     Chart.plugins.register({
         beforeDraw: function(chartInstance){
             var ctx = chartInstance.chart.ctx;
-            ctx.fillStyle = '#36383F';
+            ctx.fillStyle = '#27293d';
             ctx.fillRect(0,0, chartInstance.chart.width, chartInstance.chart.height);
         }
     });
