@@ -500,9 +500,6 @@
 			return moment().add(days, 'd').toDate();
 		}*/
 
-		function newDateString(days) {
-			return moment().add(days, 'd').format(timeFormat);
-		}
 
 		var color = Chart.helpers.color;
 		var config06 = {
@@ -547,24 +544,6 @@
 						randomScalingFactor(),
 						randomScalingFactor()
 					],
-				}, {
-					label: 'Dataset with point data',
-					backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
-					borderColor: window.chartColors.green,
-					fill: false,
-					data: [{
-						x: newDateString(0),
-						y: randomScalingFactor()
-					}, {
-						x: newDateString(5),
-						y: randomScalingFactor()
-					}, {
-						x: newDateString(7),
-						y: randomScalingFactor()
-					}, {
-						x: newDateString(15),
-						y: randomScalingFactor()
-					}],
 				}]
 			},
 			options: {
