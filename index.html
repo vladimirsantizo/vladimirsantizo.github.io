@@ -391,6 +391,7 @@
         }
     });
     
+    var color = Chart.helpers.color;
     var prodTime = {
         type: 'line',
         data: {
@@ -482,7 +483,8 @@
             },
         }
     };
-    window.myLine = new Chart(document.getElementById("prodHist"), prodTime)
+    var ctxhist = document.getElementById('prodHist').getContext('2d');
+    window.myLine = new Chart(ctxhist, prodTime)
 </script>
 </body>
 </html>
