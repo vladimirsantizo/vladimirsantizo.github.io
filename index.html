@@ -413,6 +413,8 @@
 	};
 	
     var config06 = {
+	    data: data06,
+	    options: {
 		title: {
 			text: 'Chart.js Time Scale'
 		},
@@ -420,11 +422,12 @@
 		//Number - The value jump in the hard coded scale
 		scaleStepWidth: 2,
 		scaleStartValue: 0
+	    }
     };
 
     window.onload = function() {
        var ctx04 = document.getElementById('prodHist').getContext('2d');
-       var myHist = new Chart(ctx04).Line(data06, config06);
+       window.myLine = new Chart(ctx04, config06);
     };
 </script>
 </body>
