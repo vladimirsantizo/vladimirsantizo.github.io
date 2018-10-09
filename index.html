@@ -154,6 +154,16 @@
                     </div>
                 </div>
             </div>
+            <div class="card mb-1 shadow-sm" style="border:transparent;">
+                 <div class="card-header" style="background-color:#27293d; border-bottom:1px solid #2b3553 !important;">
+                     <h4 class="my-0 " style="color:#ffffff; font-size:1.25rem;">Pies de Laminas x Día</h4>
+                 </div>
+                 <div class="card-body" style="background-color:#27293d;">
+                     <div class="card-deck mb-3 text-center" height="250" style="margin-left:0px !important; margin-right:0px !important;">
+                         <canvas class="Historia" id="chartPies" width="600" height="250" style="height: 250px;"></canvas>
+                     </div>
+                 </div>
+            </div>
             <!--div class="card-deck mb-3 text-center">
                 <div class="card mb-4 shadow-sm" style="border:transparent;">
                     <div class="card-header" style="background-color:#27293d; border-bottom:1px solid #2b3553 !important;">
@@ -681,6 +691,70 @@
             },{
                 label: 'Junior',
                 data: [15,31,47,69,31,44,39,68,55,64,39,25,60,54],
+                backgroundColor: "rgba(230,96,97, 0.2)",
+                borderColor: "rgba(230,96,97)",
+                fill: false,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: {
+                labels: {
+                    fontColor: 'white'
+                },
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false,
+                        fontColor: 'white'
+                        },
+                    pointLabels: {
+                        fontColor: 'white'
+                    },
+                    gridLines: {
+                        color: 'rgba(255,255,255,0.2)'
+                    },
+                    angleLines:{
+                        color: 'white'
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: false,
+                        fontColor: 'white'
+                    },
+                    pointLabels: {
+                        fontColor: 'white'
+                    },
+                    gridLines: {
+                        color: 'rgba(255,255,255,0.2)'
+                    },
+                    angleLines:{
+                        color: 'white'
+                    }
+                }]
+            },
+        }
+    });
+    
+    
+    
+    var ctx102 = document.getElementById("chartPies").getContext('2d');
+    var myChart10 = new Chart(ctx102, {
+        type: 'bar',
+        data: {
+            labels: ["Sep 10","Sep 11","Sep 12","Sep 13","Sep 14","Sep 17","Sep 18","Sep 19","Sep 20","Sep 21","Sep 22","Sep 24","Sep 25","Sep 26"],
+            datasets: [{
+                label: 'CD Choloma',
+                data: [1818,2597,2642,2950,1394,691,1296,3111,1985,1557,2711,2926,4566,6691],
+                backgroundColor: "rgba(33, 180, 196, 0.2)",
+                borderColor: "rgba(33, 180, 196)",
+                fill: false,
+                borderWidth: 1
+            },{
+                label: 'Junior',
+                data: [8134,5297,10506,4705,7220,9590,8524,17507,10876,8449,7535,9525,8195,8517],
                 backgroundColor: "rgba(230,96,97, 0.2)",
                 borderColor: "rgba(230,96,97)",
                 fill: false,
