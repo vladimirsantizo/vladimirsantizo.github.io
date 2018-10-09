@@ -111,27 +111,27 @@
                      </div>
                  </div>
             </div>
-            <!-- br>
+            <br>
             <div class="card-deck mb-3 shadow-sm" style="border:transparent;">
                 <div class="card mb-4 shadow-sm" style="border:transparent;">
                     <div class="card-header" style="background-color:#27293d; border-bottom:1px solid #2b3553 !important;">
-                        <h4 class="my-0 " style="color:#ffffff; font-size:1.25rem;">Horas de Inicio de Operación x Día</h4>
+                        <h4 class="my-0 " style="color:#ffffff; font-size:1.25rem;">Ordenes Operadas</h4>
                     </div>
                     <div class="card-body" style="background-color:#27293d;">
                         <div class="text-center" height="250" style="margin-left:0px !important; margin-right:0px !important;">
-                            <canvas class="Historia" id="myChart10" width="600" height="250" style="height: 250px;"></canvas>
+                            <canvas class="Historia" id="chartOperadas" width="600" height="250" style="height: 250px;"></canvas>
                         </div>
                     </div>
                 </div>
                 <div class="card mb-4 shadow-sm" style="border:transparent;">
                     <div class="card-header" style="background-color:#27293d; border-bottom:1px solid #2b3553 !important;">
-                        <h4 class="my-0 " style="color:#ffffff; font-size:1.25rem;">Horas de Inicio de Operación x Día</h4>
+                        <h4 class="my-0 " style="color:#ffffff; font-size:1.25rem;">Ordenes Operadas x Día</h4>
                     </div>
                     <div class="card-body" style="background-color:#27293d;">
-
+                       <!-- canvas class="Historia" id="chartOperadasDia" width="600" height="250" style="height: 250px;"></canvas -->
                     </div>
                 </div>
-            </div -->
+            </div>
             <!--div class="card-deck mb-3 text-center">
                 <div class="card mb-4 shadow-sm" style="border:transparent;">
                     <div class="card-header" style="background-color:#27293d; border-bottom:1px solid #2b3553 !important;">
@@ -583,6 +583,65 @@
             },
         }
     });
+    
+    var configOper =  {
+        type: 'bar',
+        data: {
+            labels: ["Junior", "CD Choloma"],
+            datasets: [{
+                data: [641, 466],
+                lineTension: 0,
+                backgroundColor: 'rgb(33, 180, 196, 0.2)',
+                borderColor: 'rgb(33, 180, 196)',
+                borderWidth: 4,
+                pointBackgroundColor: 'rgb(33, 180, 196)'
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: 'white'
+                    },
+                    pointLabels: {
+                        fontColor: 'white'
+                    },
+                    gridLines: {
+                        color: 'rgba(255,255,255,0.2)'
+                    },
+                    angleLines:{
+                        color: 'white'
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        fontColor: 'white'
+                    },
+                    gridLines: {
+                        color: 'rgba(255,255,255,0.2)'
+                    }
+                }]
+            },
+            legend: {
+                display: false,
+                labels: {
+                    fontColor: 'white'
+                },
+            },
+            title: {
+                fontColor: 'white'
+            }
+        }
+    };
+    Chart.plugins.register({
+        beforeDraw: function(chartInstance){
+            var ctx = chartInstance.chart.ctx;
+            ctx.fillStyle = '#27293d';
+            ctx.fillRect(0,0, chartInstance.chart.width, chartInstance.chart.height);
+        }
+    });
+    window.myRadar = new Chart(document.getElementById("chartOperadas"), configOper)
 </script>
 </body>
 </html>
