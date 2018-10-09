@@ -128,7 +128,7 @@
                         <h4 class="my-0 " style="color:#ffffff; font-size:1.25rem;">Ordenes Operadas x Día</h4>
                     </div>
                     <div class="card-body" style="background-color:#27293d;">
-                       <!-- canvas class="Historia" id="chartOperadasDia" width="600" height="250" style="height: 250px;"></canvas -->
+                       <canvas class="Historia" id="chartOperadasDia" width="600" height="250" style="height: 250px;"></canvas>
                     </div>
                 </div>
             </div>
@@ -642,6 +642,69 @@
         }
     });
     window.myRadar = new Chart(document.getElementById("chartOperadas"), configOper)
+    
+    
+    var ctx101 = document.getElementById("chartOperadasDia").getContext('2d');
+    var myChart10 = new Chart(ctx101, {
+        type: 'bar',
+        data: {
+            labels: ["Sep 10","Sep 11","Sep 12","Sep 13","Sep 14","Sep 17","Sep 18","Sep 19","Sep 20","Sep 21","Sep 22","Sep 24","Sep 25","Sep 26"],
+            datasets: [{
+                label: 'CD Choloma',
+                data: [20,25,45,37,21,22,18,42,25,21,47,45,54,44],
+                backgroundColor: "rgba(33, 180, 196, 0.2)",
+                borderColor: "rgba(33, 180, 196)",
+                fill: false,
+                borderWidth: 1
+            },{
+                label: 'Junior',
+                data: [15,31,47,69,31,44,39,68,55,64,39,25,60,54],
+                backgroundColor: "rgba(230,96,97, 0.2)",
+                borderColor: "rgba(230,96,97)",
+                fill: false,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: {
+                labels: {
+                    fontColor: 'white'
+                },
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false,
+                        fontColor: 'white'
+                        },
+                    pointLabels: {
+                        fontColor: 'white'
+                    },
+                    gridLines: {
+                        color: 'rgba(255,255,255,0.2)'
+                    },
+                    angleLines:{
+                        color: 'white'
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: false,
+                        fontColor: 'white'
+                    },
+                    pointLabels: {
+                        fontColor: 'white'
+                    },
+                    gridLines: {
+                        color: 'rgba(255,255,255,0.2)'
+                    },
+                    angleLines:{
+                        color: 'white'
+                    }
+                }]
+            },
+        }
+    });
 </script>
 </body>
 </html>
